@@ -11,7 +11,7 @@ use sel4_root_task::{root_task, Never};
 
 #[root_task]
 fn main(bootinfo: &sel4::BootInfoPtr) -> sel4::Result<Never> {
-    sel4::debug_println!("Hello, World!");
+    sel4::debug_println!("Goodbye, World!");
 
     let blueprint = sel4::ObjectBlueprint::Notification;
 
@@ -61,7 +61,7 @@ fn main(bootinfo: &sel4::BootInfoPtr) -> sel4::Result<Never> {
     sel4::debug_println!("badge = {:#x}", badge);
     assert_eq!(observed_badge, badge);
 
-    sel4::debug_println!("TEST_PASS");
+    sel4::debug_println!("Test Fail -- not passing :(((((())))))");
 
     sel4::init_thread::suspend_self()
 }
